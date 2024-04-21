@@ -80,5 +80,35 @@ Esto se interpreta de la siguiente manera:
 
 El clasificador de Regresión Logística cometió más errores del tipo Falsos Negativos (112) que del tipo Falsos Positivos (52), lo cual indica que el modelo es más propenso a clasificar correos spam como no spam, que a clasificar correos no spam como spam. De forma contraria al clasificador Naive Bayes, el clasificador de Regresión Logística es más propenso a dejar pasar correos spam a la bandeja de entrada del usuario, lo cual no es deseable en un filtro de spam.
 
-## Conclusión
+### Conclusión
 Dado que el clasificador Naive Bayes es más propenso a clasificar correos no spam como spam, y es menos propenso a dejar pasar correos spam a la bandeja de entrada del usuario, se escogería este modelo para detectar SPAM. Sin embargo, es importante mencionar que el caso ideal sería un modelo que minimice tanto los Falsos Positivos como los Falsos Negativos, aunque pueda ser más complicado de lograr.
+
+## Calcule la precisión y la recuperación de ambos modelos. Para cada métrica, ¿cuál es el mejor modelo? ¿Cómo se relacionan estas métricas con los tipos de errores analizados en el punto anterior? Expanda su respuesta.
+
+### Modelo: Clasificador Naive Bayes
+Se obtuvieron los siguientes valores de precisión y recuperación para el clasificador Naive Bayes:
+
+| Métrica      | Valor  |
+|--------------|--------|
+| Precisión    | 0.7727 |
+| Recuperación | 0.9617 |
+
+### Modelo: Clasificador de Regresión Logística
+Se obtuvieron los siguientes valores de precisión y recuperación para el clasificador de Regresión Logística:
+
+| Métrica      | Valor     |
+|--------------|-----------|
+| Precisión    | 0.8926    |
+| Recuperación | 0.7941    |
+
+### Mejor modelo
+La precisión mide la proporción de correos clasificados como spam que realmente son spam, mientras que la recuperación mide la proporción de correos spam que fueron correctamente clasificados como spam. Para la precisión, el mejor modelo es el clasificador de Regresión Logística, ya que tiene un valor de 0.8926, mientras que el clasificador Naive Bayes tiene un valor de 0.7727. Para la recuperación, el mejor modelo es el clasificador Naive Bayes, ya que tiene un valor de 0.9617, mientras que el clasificador de Regresión Logística tiene un valor de 0.7941.
+
+### Relación con los tipos de errores del punto anterior
+La precisión y la recuperación están relacionadas con los tipos de errores analizados en el punto anterior de la siguiente manera:
+
+- **Precisión:** La precisión se ve afectada por los Falsos Positivos, ya que mide la proporción de correos clasificados como spam que realmente son spam. En el caso del clasificador Naive Bayes, que tiene más Falsos Positivos que el clasificador de Regresión Logística, la precisión es menor.
+
+- **Recuperación:** La recuperación se ve afectada por los Falsos Negativos, ya que mide la proporción de correos spam que fueron correctamente clasificados como spam. En el caso del clasificador Naive Bayes, que tiene menos Falsos Negativos que el clasificador de Regresión Logística, la recuperación es mayor.
+
+En el contexto de un filtro de spam, considero que la recuperación es una métrica importante, ya que se busca minimizar la cantidad de correos spam que pasan a la bandeja de entrada del usuario. Por lo tanto, el clasificador Naive Bayes sería el mejor modelo para detectar SPAM, ya que tiene una mayor recuperación que el clasificador de Regresión Logística. Sin embargo, es importante tener en cuenta que la precisión también es una métrica relevante, ya que se busca que la mayoría de los correos clasificados como spam realmente sean spam, por lo que el clasificador de Regresión Logística también es una buena opción, sin embargo, ya que el clasificador Naive Bayes tiene una precisión aceptable, mantendría mi elección por este modelo.
