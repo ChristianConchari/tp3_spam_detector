@@ -83,7 +83,7 @@ El clasificador de Regresión Logística cometió más errores del tipo Falsos N
 ### Conclusión
 Dado que el clasificador Naive Bayes es más propenso a clasificar correos no spam como spam, y es menos propenso a dejar pasar correos spam a la bandeja de entrada del usuario, se escogería este modelo para detectar SPAM. Sin embargo, es importante mencionar que el caso ideal sería un modelo que minimice tanto los Falsos Positivos como los Falsos Negativos, aunque pueda ser más complicado de lograr.
 
-## Calcule la precisión y la recuperación de ambos modelos. Para cada métrica, ¿cuál es el mejor modelo? ¿Cómo se relacionan estas métricas con los tipos de errores analizados en el punto anterior? Expanda su respuesta.
+## 6. Calcule la precisión y la recuperación de ambos modelos. Para cada métrica, ¿cuál es el mejor modelo? ¿Cómo se relacionan estas métricas con los tipos de errores analizados en el punto anterior? Expanda su respuesta.
 
 ### Modelo: Clasificador Naive Bayes
 Se obtuvieron los siguientes valores de precisión y recuperación para el clasificador Naive Bayes:
@@ -112,3 +112,23 @@ La precisión y la recuperación están relacionadas con los tipos de errores an
 - **Recuperación:** La recuperación se ve afectada por los Falsos Negativos, ya que mide la proporción de correos spam que fueron correctamente clasificados como spam. En el caso del clasificador Naive Bayes, que tiene menos Falsos Negativos que el clasificador de Regresión Logística, la recuperación es mayor.
 
 En el contexto de un filtro de spam, considero que la recuperación es una métrica importante, ya que se busca minimizar la cantidad de correos spam que pasan a la bandeja de entrada del usuario. Por lo tanto, el clasificador Naive Bayes sería el mejor modelo para detectar SPAM, ya que tiene una mayor recuperación que el clasificador de Regresión Logística. Sin embargo, es importante tener en cuenta que la precisión también es una métrica relevante, ya que se busca que la mayoría de los correos clasificados como spam realmente sean spam, por lo que el clasificador de Regresión Logística también es una buena opción, sin embargo, ya que el clasificador Naive Bayes tiene una precisión aceptable, mantendría mi elección por este modelo.
+
+## 7. Obtenga la curva ROC y el AUC (Área Bajo la Curva ROC) de ambos modelos.
+El desarrollo de esta pregunta se encuentra en el notebook [spam_detector_notebook.ipynb](spam_detector_notebook.ipynb). Se obtuvieron las curvas ROC y los valores de AUC para ambos modelos:
+
+### Clasificador Naive Bayes
+![images/naive_bayes_roc_curve.png](images/naive_bayes_roc_curve.png)
+
+- **AUC:** 0.8902
+
+La curva ROC del clasificador Naive Bayes muestra un buen rendimiento, con un valor de AUC de 0.8902. La curva muestra un ascenso rápido al principio, lo que indica que el clasificador es capaz de identificar correctamente la mayoría de los casos positivos en un número reducido de falsos positivos. 
+
+### Clasificador de Regresión Logística
+![images/logistic_regression_roc_curve.png](images/logistic_regression_roc_curve.png)
+
+- **AUC:** 0.9429
+
+La curva ROC del clasificador de Regresión Logística muestra un muy buen rendimiento, con un valor de AUC de 0.9429. La curva muestra un ascenso rápido al principio, lo que indica que el clasificador es capaz de identificar correctamente la mayoría de los casos positivos en un número reducido de falsos positivos.
+
+### Gráfico de ambas curvas ROC
+![images/roc_curves.png](images/roc_curves.png)
