@@ -43,3 +43,7 @@ En cuanto a palabras llamativas, destacan palabras como 'free', 'business' y 're
 
 ## 2. Separe el conjunto de datos en un conjunto de entrenamiento y un conjunto de prueba (70% y 30% respectivamente).
 El desarrollo de esta pregunta se encuentra en el notebook [spam_detector_notebook.ipynb](spam_detector_notebook.ipynb). Realizando la separación de los datos en un conjunto de entrenamiento y un conjunto de prueba, se obtuvo que el conjunto de entrenamiento tiene 3220 muestras y el conjunto de prueba tiene 1381 muestras.
+
+## 3. Utilizando un clasificador de Bayes ingenuo, entrene con el conjunto de entrenamiento.
+El desarrollo de esta pregunta se encuentra en el notebook [spam_detector_notebook.ipynb](spam_detector_notebook.ipynb). Se entrenó un clasificador Multinomial Naive Bayes y se obtuvo un accuracy de 0.8633 con el conjunto de entrenamiento y un accuracy de 0.8733 con el conjunto de prueba.
+
