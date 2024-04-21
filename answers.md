@@ -47,3 +47,6 @@ El desarrollo de esta pregunta se encuentra en el notebook [spam_detector_notebo
 ## 3. Utilizando un clasificador de Bayes ingenuo, entrene con el conjunto de entrenamiento.
 El desarrollo de esta pregunta se encuentra en el notebook [spam_detector_notebook.ipynb](spam_detector_notebook.ipynb). Se entrenó un clasificador Multinomial Naive Bayes y se obtuvo un accuracy de 0.8633 con el conjunto de entrenamiento y un accuracy de 0.8733 con el conjunto de prueba.
 
+## 4. Utilizando un clasificador de Regresión Logística, entrene con el conjunto de entrenamiento (en este caso, normalice los datos).
+El desarrollo de esta pregunta se encuentra en el notebook [spam_detector_notebook.ipynb](spam_detector_notebook.ipynb). Se entrenó un clasificador de Regresión Logística con los datos normalizados y se obtuvo un accuracy de 0.8071 con el conjunto de entrenamiento y un accuracy de 0.8067 con el conjunto de prueba.
+
