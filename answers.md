@@ -40,3 +40,6 @@ Las 10 palabras más encontradas en correos No SPAM son:
 Las palabras comunes entre los correos con SPAM y los correos No SPAM son: `you`, 'your', 'will', nótese que estas palabras que podrían ser comunes en cualquier tipo de texto, dado que son pronombres y verbos comunes en inglés. 
 
 En cuanto a palabras llamativas, destacan palabras como 'free', 'business' y 'remove' en los correos con SPAM, dado que son palabras que podrían asociarse a ofertas, publicidad, estafas, etc. También resulta interesante ver un nombre propio como 'george' en los correos No SPAM, lo cual podría deberse a que es un nombre común en la base de datos de correos No SPAM, por otro lado, 'edu', 'address', 'meeting' podrían ser palabras comunes en correos institucionales o de trabajo.
+
+## 2. Separe el conjunto de datos en un conjunto de entrenamiento y un conjunto de prueba (70% y 30% respectivamente).
+El desarrollo de esta pregunta se encuentra en el notebook `spam_detector_notebook.ipynb`. Realizando la separación de los datos en un conjunto de entrenamiento y un conjunto de prueba, se obtuvo que el conjunto de entrenamiento tiene 3220 muestras y el conjunto de prueba tiene 1381 muestras.
