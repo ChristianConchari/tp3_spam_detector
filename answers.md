@@ -50,3 +50,35 @@ El desarrollo de esta pregunta se encuentra en el notebook [spam_detector_notebo
 ## 4. Utilizando un clasificador de Regresión Logística, entrene con el conjunto de entrenamiento (en este caso, normalice los datos).
 El desarrollo de esta pregunta se encuentra en el notebook [spam_detector_notebook.ipynb](spam_detector_notebook.ipynb). Se entrenó un clasificador de Regresión Logística con los datos normalizados y se obtuvo un accuracy de 0.8071 con el conjunto de entrenamiento y un accuracy de 0.8067 con el conjunto de prueba.
 
+## 5. ¿Qué modelo escogería para detectar SPAM? ¿Por qué?
+### Modelo: Clasificador Naive Bayes
+Los valores obtenidos de la matriz de confusión para el clasificador Naive Bayes son:
+
+![images/naive_bayes_confusion_matrix.png](images/naive_bayes_confusion_matrix.png)
+
+Esto se interpreta de la siguiente manera:
+
+- **Verdaderos positivos (TP):** 523 correos fueron correctamente clasificados como spam.
+- **Verdaderos negativos (TN):** 683 correos fueron correctamente clasificados como no spam.
+- **Falsos positivos (FP):** 154 correos no spam fueron incorrectamente clasificados como spam.
+- **Falsos negativos (FN):** 21 correos spam fueron incorrectamente clasificados como no spam.
+
+El clasificador Naive Bayes cometió más errores del tipo Falsos Positivos (154) que del tipo Falsos Negativos (21), lo cual indica que el modelo es más propenso a clasificar correos no spam como spam, que a clasificar correos spam como no spam. Esto puede resultar beneficioso en el contexto de un filtro de spam, ya que es preferible que un correo no spam sea tomado como spam, a que un correo spam no sea filtrado y pase a la bandeja de entrada del usuario.
+
+### Modelo: Clasificador de Regresión Logística
+
+Los valores obtenidos de la matriz de confusión para el clasificador de Regresión Logística son:
+
+![images/naive_bayes_confusion_matrix.png](images/logistic_regression_confusion_matrix.png)
+
+Esto se interpreta de la siguiente manera:
+
+- **Verdaderos positivos (TP):** 432 correos fueron correctamente clasificados como spam.
+- **Verdaderos negativos (TN):** 785 correos fueron correctamente clasificados como no spam.
+- **Falsos positivos (FP):** 52 correos no spam fueron incorrectamente clasificados como spam.
+- **Falsos negativos (FN):** 112 correos spam fueron incorrectamente clasificados como no spam.
+
+El clasificador de Regresión Logística cometió más errores del tipo Falsos Negativos (112) que del tipo Falsos Positivos (52), lo cual indica que el modelo es más propenso a clasificar correos spam como no spam, que a clasificar correos no spam como spam. De forma contraria al clasificador Naive Bayes, el clasificador de Regresión Logística es más propenso a dejar pasar correos spam a la bandeja de entrada del usuario, lo cual no es deseable en un filtro de spam.
+
+## Conclusión
+Dado que el clasificador Naive Bayes es más propenso a clasificar correos no spam como spam, y es menos propenso a dejar pasar correos spam a la bandeja de entrada del usuario, se escogería este modelo para detectar SPAM. Sin embargo, es importante mencionar que el caso ideal sería un modelo que minimice tanto los Falsos Positivos como los Falsos Negativos, aunque pueda ser más complicado de lograr.
